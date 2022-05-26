@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="crud.css">
+   
+    <title>Entries</title>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+                    ></i>Weekly Report</div>
+            <div class="list-group list-group-flush my-3">
+                <a href="d.html" class="list-group-item list-group-item-action bg-transparent second-text "><i
+                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="e.html" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        class="fas fa-pen me-2"></i>Entries</a>
+               
+                <a href="r.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-file me-2"></i>Reports</a>
+
+                        <a href="p.html" class="list-group-item list-group-item-action bg-transparent second-text"><i
+                        class="fas fa-box me-2"></i>Parameters</a>	
+
+
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                        class="fas fa-power-off me-2"></i>Logout</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-0">Entries</h2>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user me-2"></i>Custodian
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+<br>
+<table class="zowe">
+
+<tr><td><label for="region">Region/Zone:</label>&nbsp;  <select id="regionselector" name="region" onchange="changeCus()">
+        <option value="Select Region" selected="selected">Select Region/Zone</option>
+        <option value="Greater Accra">Greater Accra</option>
+        <option value="Kumasi">Kumasi</option>
+        <option value="Suyani">Suyani</option>
+        <option value="Koforidua">Koforidua</option>
+    </select> </td>  <td><label for="Custodian">Custodian:</label> &nbsp;
+<input type="text" name="zonemanager" value=" " id="gg" disabled=""></td> </tr>
+
+<tr><td><label for="week">Week:</label>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="week" id="week" name="week"></td></tr>
+   
+
+</table>
+ 
+
+  <table class="det" >
+    <tr>
+        <thead>
+        <th>DETAILS OF WEEK</th>
+        <th>PREVIOUS WEEK</th>
+        <th>CURRENT WEEK</th>
+        <th>CHANGE</th>
+    </thead>
+    </tr>
+    <tr>
+        <th># of TPMs Deployed</th>
+        <td><input type="number" name="" disabled="" ></td>
+        <td><input type="number" name=""></td>
+        <td><input type="number" name="" disabled="" ></td>
+    </tr>
+    <tr>
+        <th># of Active TPMs</th>
+        <td><input type="number" name="" disabled="" ></td>
+        <td><input type="number" name=""></td>
+        <td><input type="number" name="" disabled="" ></td>
+    </tr>
+        <tr>
+        <th># of InActive TPMs</th>
+        <td><input type="text" name="" disabled="" ></td>
+        <td><input type="text" name=""></td>
+        <td><input type="text" name="" disabled="" ></td>
+    </tr>
+    </tr>
+        <tr>
+        <th>TOTAL TICKET SALES</th>
+        <td><input type="number" name="" disabled="" ></td>
+        <td><input type="number" name=""></td>
+        <td><input type="number" name="" disabled="" ></td>
+    </tr>
+        </tr>
+        <tr>
+        <th>AVG ACTIVE TS per TPM</th>
+        <td><input type="number" name="" disabled="" ></td>
+        <td><input type="number" name=""></td>
+        <td><input type="number" name="" disabled="" ></td>
+    </tr>
+  </table>
+
+    
+    <table class="toptier">
+
+        <tr class="toptt">
+            <td class="topt">
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                     <div><h4>TOP TIER - RETAILERS - 50%</h4></div>
+                    <div>
+                        <label for="fullName">Full Name</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label for="retailerNo">Retailer #</label>
+                        <input type="number" name="retailerNo" id="retailerNo">
+                    </div>
+                    <div>
+                        <label for="amount">Amount</label>
+                        <input type="number" name="amount" id="amount">
+                    </div>
+                    <div>
+                        <label for="contribution">% Contribution</label>
+                        <input type="number" name="contribution" id="contribution">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+        
+                <td class="topt">
+                    <table class="list" id="topTierList">
+                        <thead>
+                            <tr class="toptt">
+                                <th>Full Name</th>
+                                <th>Retailer #</th>
+                                <th>Amount</th>
+                                <th>% Contribution</th>
+                            </tr>
+                        </thead> 
+                         <tbody>
+
+                        </tbody>               
+                    </table>
+                </td>   
+            </td>
+        </tr>
+    </table>
+
+</table>
+    <table class="interac">
+            <tr><th colspan="2">RETAILER INTERACTION - PROVIDE RETAILER TRANSACTION</th></tr>
+            <tr>
+                
+                    
+                    <th>ACTIVITY</th>
+                    <th>PREVIOUS WEEK</th>
+                    <th>CURRENT WEEK</th>
+                    
+            </tr>
+            <tr>
+                <th>CALL</th>
+                <td><input disabled="" type="number" name=""></td>
+                <td><input type="number" name=""></td>
+
+            </tr>
+            <tr>
+                <th>VISITATION</th>
+                <td><input disabled="" type="number" name=""></td>
+                <td><input type="number" name=""></td>
+            </tr>
+    </table>
+
+    <table class="inac">
+
+        <tr>
+            <th>#</th>
+            <th>Details</th>
+            <th>PREVIOUS WEEK</th>
+            <th>CURRENT WEEK</th>
+            <th>% CHANGE</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>30 to 59 Days</th>
+            <td><input disabled="" type="number" name=""></td>
+            <td><input type="number" name=""></td>
+            <td><input disabled="" type="number" name=""></td>
+        </tr>
+         <tr>
+            <th>2</th>
+            <th>60 to 89 Days</th>
+            <td><input disabled="" type="number" name=""></td>
+            <td><input type="number" name=""></td>
+            <td><input disabled="" type="number" name=""></td>
+        </tr>
+         <tr>
+            <th>3</th>
+            <th>90 to 179 Days</th>
+            <td><input disabled="" type="number" name=""></td>
+            <td><input type="number" name=""></td>
+            <td><input disabled="" type="number" name=""></td>
+        </tr>
+         <tr>
+            <th>4</th>
+            <th>180 to 359 Days</th>
+            <td><input disabled="" type="number" name=""></td>
+            <td><input type="number" name=""></td>
+            <td><input disabled="" type="number" name=""></td>
+        </tr>
+         <tr>
+            <th>5</th>
+            <th>360 to 719 Days</th>
+            <td><input disabled="" type="number" name=""></td>
+            <td><input type="number" name=""></td>
+            <td><input disabled="" type="number" name=""></td>
+        </tr>
+         <tr>
+            <th>6</th>
+            <th>720 Days and Above</th>
+            <td><input disabled="" type="number" name=""></td>
+            <td><input type="number" name=""></td>
+            <td><input disabled="" type="number" name=""></td>
+        </tr>
+        <tr>
+            <th></th>
+            <th>TOTAL</th>
+            <td><input disabled="" type="number" name=""></td>
+            <td><input type="number" name=""></td>
+            <td><input disabled="" type="number" name=""></td>
+        </tr>
+    </table>
+    <button type="submit" class="submit-entries">Submit Entries</button>
+
+
+
+
+    <!-- /#page-content-wrapper -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="crud.js"></script>
+
+    <br>
+</body>
+
+
+
+</html>
