@@ -105,3 +105,29 @@
     margin-left: -15rem;
   }
 }
+.table-section{
+  padding: 0 3rem;
+
+}
+.table-section .repo{
+  justify-content: center;
+  display: flex;
+  padding: 1rem 0;
+ 
+ 
+}
+.table-section .repo .rt{
+  border: 1px solid black;
+  width: 100%;
+  
+  
+}
+.table-section .repo .rt th{
+  border: 1px solid black;
+  text-align: center;
+}
+.table-section .repo .rt td{
+  border: 1px solid black;
+  text-align: center;
+}
+
